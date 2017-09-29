@@ -946,7 +946,8 @@ export default class Grid extends React.PureComponent {
               overflow: "hidden",
               pointerEvents: isScrolling ? "none" : "",
               position: "relative",
-              ...containerStyle
+              ...(typeof containerStyle === 'function' &&
+                containerStyle(totalRowsHeight, height): containerStyle),
             }}
           >
             {childrenToDisplay}
